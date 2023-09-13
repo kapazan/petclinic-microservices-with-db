@@ -154,7 +154,7 @@ resource "aws_iam_instance_profile" "petclinic-master-server-profile" {
 
 resource "aws_instance" "kube-master" {
     ami = "ami-053b0d53c279acc90"
-    instance_type = "t3a.medium"
+    instance_type = "t2.micro"
     iam_instance_profile = aws_iam_instance_profile.petclinic-master-server-profile.name
     vpc_security_group_ids = [aws_security_group.petclinic-kube-master-sg.id, aws_security_group.petclinic-mutual-sg.id]
     key_name = "clarus"
